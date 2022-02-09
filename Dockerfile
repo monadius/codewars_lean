@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 RUN set -ex; \
     useradd --create-home -u 9999 codewarrior; \
@@ -14,6 +14,7 @@ RUN set -ex; \
         git \
         python3-pip \
         python3-setuptools \
+        python3-wheel \
     ; \
 # Install `leanproject`
     pip3 install -Iv mathlibtools==0.0.10; \
