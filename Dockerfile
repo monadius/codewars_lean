@@ -16,7 +16,7 @@ RUN set -ex; \
         python3-setuptools \
     ; \
 # Install `leanproject`
-    pip3 install mathlibtools; \
+    pip3 install -Iv mathlibtools==0.0.10; \
     rm -rf /tmp/* /var/lib/apt/lists/*;
 
 USER codewarrior
