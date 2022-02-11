@@ -17,14 +17,14 @@ RUN set -ex; \
         python3-wheel \
     ; \
 # Install `leanproject`
-    pip3 install -Iv mathlibtools==0.0.10; \
+    pip3 install -Iv mathlibtools==1.1.0; \
     rm -rf /tmp/* /var/lib/apt/lists/*;
 
 USER codewarrior
 # Install Elan to manage Lean versions
 RUN set -ex; \
     cd /tmp; \
-    wget -q https://github.com/Kha/elan/releases/download/v0.10.2/elan-x86_64-unknown-linux-gnu.tar.gz; \
+    wget -q https://github.com/leanprover/elan/releases/download/v1.3.1/elan-x86_64-unknown-linux-gnu.tar.gz; \
     tar xf elan-x86_64-unknown-linux-gnu.tar.gz; \
     rm elan-x86_64-unknown-linux-gnu.tar.gz; \
     ./elan-init -y --no-modify-path; \
