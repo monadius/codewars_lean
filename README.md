@@ -13,7 +13,8 @@ C=$(docker container create --rm -w $W ghcr.io/codewars/lean:latest lean test/So
 # src/Solution.lean
 # src/Preloaded.lean
 # test/SolutionTest.lean
-docker container cp ./. $C:$W
+docker container cp src $C:$W
+docker container cp test $C:$W
 
 # Run tests
 docker container start --attach $C
