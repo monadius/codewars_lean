@@ -1,8 +1,0 @@
-[package]
-name = "lean-challenge"
-version = "2.0"
-lean_version = "leanprover-community/lean:3.39.1"
-path = "src"
-
-[dependencies]
-mathlib = {git = "https://github.com/leanprover-community/mathlib", rev = "fb41da97816e716c002c723f7f08e103874d9f50"}

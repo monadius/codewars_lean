@@ -1,14 +1,14 @@
-W=/workspace/
+W=/workspace/kata
 # Create container
-C=$(docker container create --rm -w $W ghcr.io/codewars/lean:latest lean test/SolutionTest.lean)
+C=$(docker container create --rm -w $W ghcr.io/codewars/lean4:latest lake build)
 # C=$(docker container create --rm -w $W cw_lean lean test/SolutionTest.lean)
 
 # Copy files from the current directory
 # src/Solution.lean
 # src/Preloaded.lean
 # test/SolutionTest.lean
-docker container cp src $C:$W
-docker container cp test $C:$W
+docker container cp src/. $C:$W/Kata
+# docker container cp test $C:$W
 
 # Run tests
 docker container start --attach $C
