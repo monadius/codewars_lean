@@ -41,3 +41,7 @@ COPY --chown=codewarrior:codewarrior \
 RUN set -ex; \
     cd /workspace; \
     lake exe cache get;
+
+COPY --chown=codewarrior:codewarrior \
+    Kata/CodewarsTests.lean \
+    /workspace/Kata/CodewarsTests.lean

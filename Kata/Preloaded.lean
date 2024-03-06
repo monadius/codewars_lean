@@ -1,4 +1,4 @@
-def TASK_1 := ∀ n m : Nat, n + m = n + m
+def TASK_1 := ∀ a b : Nat, a + b = a + b
 notation "TASK_1" => TASK_1
 
 def TASK_2 := ∀ n m : Nat, n + m = m + n
