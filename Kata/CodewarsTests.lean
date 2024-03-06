@@ -25,8 +25,9 @@ elab "#cw_assert_type " t:term ":" ty:term : command => do
   logInfo m!"\n<IT::>Type of '{t}'"
   withoutModifyingEnv <| runTermElabM fun _ => do
     let t ← elabTerm t none
-    let actual_ty ← elabTerm ty none
-    let expected_ty ← inferType t
+    -- perform a whnf reduction to unfold definitions from Preloaded
+    let expected_ty ← whnf (← elabTerm ty none)
+    let actual_ty ← inferType t
     if ← isDefEq expected_ty actual_ty then
       printSuccess
     else do
